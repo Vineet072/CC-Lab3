@@ -15,7 +15,7 @@ class Product:
 
 def list_products() -> list[Product]:
     products = dao.list_products()
-    return [for product in products Product.load(product)]
+    return [Product.load(product) for product in products]
 
 def get_product(product_id: int) -> Product:
     return Product.load(dao.get_product(product_id))
